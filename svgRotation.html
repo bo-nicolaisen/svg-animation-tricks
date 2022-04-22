@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/rotation.css">
+</head>
+
+<body>
+    <h1>Rotating a svg element around its center</h1>
+
+    <h2>the problem</h2>
+    <p>just rotating with this code</p>
+
+    <pre>
+    #rotWrong {
+    animation: myRotation 1s infinite linear;
+    }
+
+    @keyframes myRotation {
+    99% { transform: rotate(359deg);}
+    }
+
+</pre>
+
+
+    <svg width="400" height="400">
+        <rect id="rotWrong" x="100" y="100" width="50" height="50" style="fill:rgb(0,0,255)" />
+    </svg>
+
+
+    <h2>solution</h2>
+    <p>use this in your CSS</p>
+
+    <pre>
+#rotRight {
+transform-box: fill-box;
+transform-origin: center;<br/>
+
+animation: myRotation 1s infinite linear;
+}
+
+@keyframes myRotation {
+99% {transform: rotate(359deg);}
+}
+
+        </pre>
+
+    <svg width="400" height="400">
+        <rect id="rotRight" x="100" y="100" width="50" height="50" style="fill:rgb(255, 38, 0)" />
+    </svg>
+
+
+    <a href="index.html">back</a>
+
+
+
+</body>
+
+</html>

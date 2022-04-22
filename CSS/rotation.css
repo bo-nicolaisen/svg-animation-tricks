@@ -1,0 +1,16 @@
+#rotWrong {
+  animation: myRotation 1s infinite linear;
+}
+
+#rotRight {
+  transform-box: fill-box;
+  transform-origin: center;
+
+  animation: myRotation 1s infinite linear;
+}
+
+@keyframes myRotation {
+  99% {
+    transform: rotate(359deg);
+  }
+}
